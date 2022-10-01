@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         squares[pacmanCurrentIndex].classList.add('pacman');
         pacDotEaten();
-                                        // powerPelletEaten();
+        powerPelletEaten();
                                         // checkForGameOver();
                                         // checkForWin();
     }
@@ -133,6 +133,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+
+    // power pellet eaten
+    function powerPelletEaten() {
+        if (squares[pacmanCurrentIndex].classList.contains('power-pellet')) {
+            score += 10;
+            ghosts.forEach(ghost => ghost.isScared = true);
+            setTimeout(unScareGhosts, 10000);
+            squares[pacmanCurrentIndex].classList.remove('power-pellet');
+        }
+    }
+
+    // unscared ghosts
+    function unScareGhosts() {
+        ghosts.forEach(ghost => ghost.isScared = false);
+    }
+
+
     //create ghosts using Constructors
     class Ghost {
         constructor(className, startIndex, speed) {
@@ -142,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             this.currentIndex = startIndex;
             this.isScared = false;
             this.timerId = NaN;
+            this.isScared = false;
         }
     }
     
@@ -173,14 +191,19 @@ document.addEventListener('DOMContentLoaded', () => {
             !squares[ghost.currentIndex + direction].classList.contains('wall')) {
               //remove the ghosts classes
                 squares[ghost.currentIndex].classList.remove(ghost.className);
-                squares[ghost.currentIndex].classList.remove('ghost', 'scared-ghost');
+                squares[ghost.currentIndex].classList.remove('ghost', 'scaredGhost');
               //move into that space
                 ghost.currentIndex += direction;
                 squares[ghost.currentIndex].classList.add(ghost.className, 'ghost');
           //else find a new random direction ot go in
             } else direction = directions[Math.floor(Math.random() * directions.length)];
     
-
+          //if the ghost is currently scared
+            if (ghost.isScared) {
+                squares[ghost.currentIndex].classList.add('scaredGhost');
+            }
+    
+          //if the ghost is currently scared and pacman is on it
         }, ghost.speed);
     }
 
