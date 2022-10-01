@@ -1,1 +1,28 @@
-/* add home page styles here */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 560px;
+    height: 560px;
+    outline: 2px solid black;
+}
+
+.grid div {
+    width: 20px;
+    height: 20px;
+}
+
+.pac-dot {
+    background-color: green;
+    border: 2px solid white;
+    box-sizing: border-box;
+}
+
+.wall {
+    background-color: blue;
+    /* outline: 1px solid white; */
+}
+
+.power-pellet {
+    background-color: purple;
+    border-radius: 10px;
+}
