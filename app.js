@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         squares[pacmanCurrentIndex].classList.add('pacman');
         pacDotEaten();
         powerPelletEaten();
-                                        // checkForGameOver();
+        checkForGameOver();
                                         // checkForWin();
     }
     document.addEventListener('keyup', movePacman);
@@ -210,9 +210,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 score += 100;
                 squares[ghost.currentIndex].classList.add(ghost.className, 'ghost');
             }
-
-
+            checkForGameOver;
         }, ghost.speed);
+    }
+
+    function checkForGameOver() {
+        if (squares[pacmanCurrentIndex].classList.contains('ghost') && 
+        !squares[pacmanCurrentIndex].classList.contains('scaredGhost')) {
+            ghosts.forEach(ghost => clearInterval(ghost.timerId));
+            document.removeEventListener('keyup', movePacman);
+            setTimeout(function(){alert('Game Over');
+            }, 500);
+        }
+
     }
 
 
