@@ -1,1 +1,70 @@
-/* add home page styles here */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 560px;
+    height: 560px;
+    outline: 2px solid black;
+}
+
+.grid div {
+    width: 20px;
+    height: 20px;
+}
+
+.pac-dot {
+    background-color: green;
+    border: 2px solid white;
+    box-sizing: border-box;
+}
+
+.wall {
+    background-color: blue;
+}
+
+.power-pellet {
+    background-color: purple;
+    border-radius: 10px;
+}
+
+.pacman {
+    background-color: yellow;
+    border-radius: 10px;
+}
+
+.blinky {
+    background-color: rgb(188, 19, 19);
+    border: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.pinky {
+    background-color: rgb(241, 85, 111);
+    border: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.inky {
+    background-color: rgb(36, 149, 149);
+    border: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.clyde {
+    background-color: rgb(233, 120, 6);
+    border: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.scaredGhost {
+    background-color: aquamarine;
+    border: 0px;
+}
+
+.start {
+    font-size: 25px;
+    width: 25%;
+}
