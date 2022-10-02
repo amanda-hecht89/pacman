@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const scoreDisplay = document.getElementById('score');
     const width = 28;
     let score = 0;
+    const startGame = document.querySelector('.start');
 
     // grid layout and squares
     const layout = [
@@ -42,7 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2 - ghost-lair
     // 3 - power-pellet
     // 4 - empty
-
+    startGame.addEventListener('click', () => {
+        window.location.reload();
+    
+    });
     // draw and render the grid
     function createBoard() {
         for (let i = 0; i < layout.length; i++) {
@@ -219,8 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
         !squares[pacmanCurrentIndex].classList.contains('scaredGhost')) {
             ghosts.forEach(ghost => clearInterval(ghost.timerId));
             document.removeEventListener('keyup', movePacman);
-            setTimeout(function(){alert('Game Over');
-            }, 500);
+            scoreDisplay.innerHTML = 'Game Over';
         }
 
     }
