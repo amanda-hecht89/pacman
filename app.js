@@ -204,6 +204,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
     
           //if the ghost is currently scared and pacman is on it
+            if (ghost.isScared && squares[ghost.currentIndex].classList.contains('pacman')) {
+                squares[ghost.currentIndex].classList.remove(ghost.className, 'ghost', 'scaredGhost');
+                ghost.currentIndex = ghost.startIndex;
+                score += 100;
+                squares[ghost.currentIndex].classList.add(ghost.className, 'ghost');
+            }
+
+
         }, ghost.speed);
     }
 
