@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     width: 560px;
     height: 560px;
-    outline: 2px solid black;
+    outline: 5px solid black;
 }
 
 .grid div {
@@ -12,55 +12,55 @@
 }
 
 .pac-dot {
-    background-color: green;
+    background-color: rgb(25, 84, 46);
     border: 2px solid white;
     box-sizing: border-box;
 }
 
 .wall {
-    background-color: blue;
+    background-color: rgb(139, 139, 227);
 }
 
 .power-pellet {
-    background-color: purple;
+    background-color: rgb(194, 114, 191);
     border-radius: 10px;
 }
 
 .pacman {
-    background-color: yellow;
+    background-color: rgb(200, 200, 19);
     border-radius: 10px;
 }
 
 .blinky {
-    background-color: rgb(188, 19, 19);
+    background-color: rgb(217, 104, 104);
     border: 0px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
 .pinky {
-    background-color: rgb(241, 85, 111);
+    background-color: rgb(236, 141, 204);
     border: 0px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
 .inky {
-    background-color: rgb(36, 149, 149);
+    background-color: rgb(100, 194, 194);
     border: 0px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
 .clyde {
-    background-color: rgb(233, 120, 6);
+    background-color: rgb(237, 166, 95);
     border: 0px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
 .scaredGhost {
-    background-color: aquamarine;
+    background-color: rgb(30, 195, 140);
     border: 0px;
 }
 
